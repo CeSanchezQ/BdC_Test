@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "rut": "12508387-0",
+        "first_name": "test",
+        "last_name": "test",
+        "date_birth": "1996-05-10",
+        "mobile_phone": "213212656",
+        "email": "test@gmail.com",
+        "address": null,
+        "city_id": null,
+        "session_active": true,
+        "password": "1234"
+    },
+    {
+        "id": 1,
+        "rut": "19797848-1",
+        "first_name": "test",
+        "last_name": "test",
+        "date_birth": "1996-05-10",
+        "mobile_phone": "213212656",
+        "email": "test@gmail.com",
+        "address": null,
+        "city_id": null,
+        "session_active": true,
+        "password": "4567"
+    },
+    {
+        "id": 1,
+        "rut": "30696949-8",
+        "first_name": "test",
+        "last_name": "test",
+        "date_birth": "1996-05-10",
+        "mobile_phone": "213212656",
+        "email": "test@gmail.com",
+        "address": null,
+        "city_id": null,
+        "session_active": true,
+        "password": "6789"
+    }
+]
