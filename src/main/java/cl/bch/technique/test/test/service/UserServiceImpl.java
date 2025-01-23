@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
         userDto.setDate_birth(user.getDate_birth());
         userDto.setMobile_phone(user.getMobile_phone());
         userDto.setEmail(user.getEmail());
-        userDto.setAdress(user.getAdress());
+        userDto.setAddress(user.getAddress());
         userDto.setCity_id(user.getCity_id());
         userDto.setSession_active(user.isSession_active());
         return userDto;
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService{
         newUser.setDate_birth(userDto.getDate_birth());
         newUser.setMobile_phone(userDto.getMobile_phone());
         newUser.setEmail(userDto.getEmail());
-        newUser.setAdress(userDto.getAdress());
+        newUser.setAddress(userDto.getAddress());
         newUser.setCity_id(userDto.getCity_id());
         newUser.setSession_active(userDto.isSession_active());
         newUser.setPassword(userDto.getPassword());

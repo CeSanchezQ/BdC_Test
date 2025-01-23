@@ -19,7 +19,7 @@ public class UserDto {
     private String date_birth;
     private String mobile_phone;
     private String email;
-    private String adress;
+    private String address;
     private Long city_id;
     private boolean session_active;
     private String password;
