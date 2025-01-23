@@ -10,8 +10,8 @@ import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,11 +25,13 @@ public class UserRepositoryImpl implements UserRepository{
 
     private List<User> userList;
 
+    ObjectMapper objectMapper = new ObjectMapper();
+
     public UserRepositoryImpl(){
         Resource resource = new ClassPathResource("UserDatabase.json");
-        ObjectMapper objectMapper = new ObjectMapper();
+        //ObjectMapper objectMapper = new ObjectMapper();
         try {
-            userList = Arrays.asList(objectMapper.readValue(resource.getFile(), User[].class));
+            userList = new ArrayList<>(Arrays.asList(objectMapper.readValue(resource.getFile(), User[].class)));
         } catch (StreamReadException e) {
             e.printStackTrace();
         } catch (DatabindException e) {
@@ -54,11 +56,12 @@ public class UserRepositoryImpl implements UserRepository{
     @Override
     public User save(User user) {
         user.setId(userList.size() + 1L);
-        userList.add(user);
-        Resource resource = new ClassPathResource("UserDatabase.json");
-        ObjectMapper objectMapper = new ObjectMapper();
+        List<User> userNewList = new ArrayList<>(userList);
+        userNewList.add(user);
+        Resource resource = new ClassPathResource("C:\\Users\\under\\OneDrive\\Escritorio\\Prueba tecnica\\UserDatabase.json");
+        //ObjectMapper objectMapper = new ObjectMapper();
         try {
-            objectMapper.writeValue(resource.getFile(), userList);
+            objectMapper.writeValue(resource.getFile(), userNewList);
             return user;
         } catch (StreamWriteException e) {
             e.printStackTrace();

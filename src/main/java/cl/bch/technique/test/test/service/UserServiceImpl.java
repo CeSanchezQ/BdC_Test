@@ -45,7 +45,8 @@ public class UserServiceImpl implements UserService{
         newUser.setSession_active(userDto.isSession_active());
         newUser.setPassword(userDto.getPassword());
 
-        UserRepository.save(newUser);
+        newUser = UserRepository.save(newUser);
+        userDto.setId(newUser.getId());
         return userDto;
     }
 
